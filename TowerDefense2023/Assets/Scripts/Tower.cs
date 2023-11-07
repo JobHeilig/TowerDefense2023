@@ -54,6 +54,7 @@ public class Tower : MonoBehaviour
             {
                 GameObject projectileGameObject = Instantiate(projectilePrefab);
                 Projectile projectile = projectileGameObject.GetComponent<Projectile>();
+                projectileGameObject.transform.position = transform.position;
                 projectile.target = target.transform;
 
                 yield return new WaitForSeconds(shootInterval);

@@ -21,17 +21,31 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
 
-    
+    private void Start()
+    {
+        Startwave();
+    }
 
     private void Update()
     {
         if (!isSpawning) return;
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn >= (1f / enemiesPerSecond))
+        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
+            SpawnEnemy();
+            enemiesLeftToSpawn--;
+            enemiesAlive++;
+
+            timeSinceLastSpawn = 0f;
 
         }
+    }
+
+    private void SpawnEnemy()
+    {
+        GameObject prefabToSpawn = enemyPrefabs[0];
+        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }
 
     private void Startwave()

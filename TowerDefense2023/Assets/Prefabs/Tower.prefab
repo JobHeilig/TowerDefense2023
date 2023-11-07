@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1702200893849136455, guid: 434588eaf378e34448b740b642462d68, type: 3}
   shootInterval: 1
-  target: {fileID: 0}
+  target: {fileID: 6598003483633195898, guid: f6ac1246fbe03764a807d60df4a79f6d, type: 3}
 --- !u!1 &7121903598356936419
 GameObject:
   m_ObjectHideFlags: 0
